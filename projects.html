@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>案件一覧 | Asbestos Analysis Manager</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+  <div class="app-container">
+
+
+    <aside class="sidebar">
+      <div class="sidebar-logo">
+        <h1>Asbestos</h1>
+        <p>Analysis Manager</p>
+      </div>
+
+      <nav class="sidebar-nav">
+        <a href="#" class="nav-item">Dashboard</a>
+        <a href="projects.html" class="nav-item active">案件一覧</a>
+        <a href="index.html" class="nav-item">新規案件登録</a>
+      </nav>
+    </aside>
+
+
+    <main class="main-content">
+
+      <div class="page-header">
+        <div>
+          <p class="page-subtitle">PROJECT MANAGEMENT</p>
+          <h2>案件一覧</h2>
+        </div>
+      </div>
+
+      <section class="form-card">
+
+        <div class="section-title">
+          <h3>登録案件</h3>
+          <p>登録済みの分析案件を確認できます。</p>
+        </div>
+
+        <div class="projects-table-wrapper">
+
+          <table class="projects-table">
+
+            <thead>
+              <tr>
+                <th>報告書番号</th>
+                <th>顧客名</th>
+                <th>件名</th>
+                <th>受付日</th>
+                <th>分析日</th>
+                <th>分析担当者</th>
+                <th>試料数</th>
+              </tr>
+            </thead>
+
+            <tbody id="projectsTableBody">
+            </tbody>
+
+          </table>
+
+        </div>
+
+      </section>
+
+    </main>
+
+  </div>
+
+  <script src="js/projects.js"></script>
+
+</body>
+</html>

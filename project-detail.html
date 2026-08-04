@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>案件詳細 | Asbestos Analysis Manager</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+  <div class="app-container">
+
+    <aside class="sidebar">
+      <div class="sidebar-logo">
+        <h1>Asbestos</h1>
+        <p>Analysis Manager</p>
+      </div>
+
+      <nav class="sidebar-nav">
+        <a href="#" class="nav-item">Dashboard</a>
+        <a href="projects.html" class="nav-item">案件一覧</a>
+        <a href="index.html" class="nav-item">新規案件登録</a>
+      </nav>
+    </aside>
+
+    <main class="main-content">
+
+      <div class="page-header">
+        <div>
+          <p class="page-subtitle">PROJECT DETAIL</p>
+          <h2>案件詳細</h2>
+        </div>
+      </div>
+
+      <section class="form-card">
+
+        <div class="section-title">
+          <h3>案件情報</h3>
+        </div>
+
+        <div class="detail-grid">
+
+          <div class="detail-item">
+            <span>報告書番号</span>
+            <strong id="detailReportNumber"></strong>
+          </div>
+
+          <div class="detail-item">
+            <span>顧客名</span>
+            <strong id="detailCustomerName"></strong>
+          </div>
+
+          <div class="detail-item">
+            <span>件名</span>
+            <strong id="detailTitle"></strong>
+          </div>
+
+          <div class="detail-item">
+            <span>サンプル受付日</span>
+            <strong id="detailReceivedDate"></strong>
+          </div>
+
+          <div class="detail-item">
+            <span>サンプル分析日</span>
+            <strong id="detailAnalysisDate"></strong>
+          </div>
+
+          <div class="detail-item">
+            <span>分析担当者</span>
+            <strong id="detailAnalyst"></strong>
+          </div>
+
+          <div class="detail-item">
+            <span>確認分析者</span>
+            <strong id="detailReviewer"></strong>
+          </div>
+
+        </div>
+
+        <div class="form-actions">
+
+            
+
+            <button
+                type="button"
+                id="editProjectButton"
+                class="submit-button"
+            >
+                編集する
+            </button>
+
+            <button
+                type="button"
+                id="deleteProjectButton"
+                class="delete-project-button"
+            >
+                削除する
+            </button>
+
+        </div>
+
+      </section>
+
+      <section class="form-card">
+
+        <div class="section-title">
+          <h3>試料情報</h3>
+        </div>
+
+        <div class="projects-table-wrapper">
+
+          <table class="projects-table">
+
+            <thead>
+              <tr>
+                <th>試料No.</th>
+                <th>採取箇所</th>
+                <th>試料名称</th>
+                <th>アスベスト含有量</th>
+                <th>アスベスト種類</th>
+              </tr>
+            </thead>
+
+            <tbody id="detailSamplesBody">
+            </tbody>
+
+          </table>
+
+        </div>
+
+      </section>
+
+    </main>
+
+  </div>
+
+  <script src="js/project-detail.js"></script>
+
+</body>
+</html>

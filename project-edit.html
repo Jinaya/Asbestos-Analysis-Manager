@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>案件編集 | Asbestos Analysis Manager</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+  <div class="app-container">
+
+    <aside class="sidebar">
+      <div class="sidebar-logo">
+        <h1>Asbestos</h1>
+        <p>Analysis Manager</p>
+      </div>
+
+      <nav class="sidebar-nav">
+        <a href="#" class="nav-item">Dashboard</a>
+        <a href="projects.html" class="nav-item">案件一覧</a>
+        <a href="index.html" class="nav-item">新規案件登録</a>
+      </nav>
+    </aside>
+
+    <main class="main-content">
+
+      <div class="page-header">
+        <div>
+          <p class="page-subtitle">PROJECT EDIT</p>
+          <h2>案件編集</h2>
+        </div>
+      </div>
+
+      <form class="project-form" id="editProjectForm">
+
+        <section class="form-card">
+
+          <div class="section-title">
+            <h3>案件情報</h3>
+            <p>登録済みの案件情報を編集できます。</p>
+          </div>
+
+          <div class="form-grid">
+
+            <div class="form-group">
+              <label for="customerName">顧客名</label>
+              <input type="text" id="customerName">
+            </div>
+
+            <div class="form-group">
+              <label for="reportNumber">報告書番号</label>
+              <input type="text" id="reportNumber">
+            </div>
+
+            <div class="form-group">
+              <label for="receivedDate">サンプル受付日</label>
+              <input type="date" id="receivedDate">
+            </div>
+
+            <div class="form-group">
+              <label for="analysisDate">サンプル分析日</label>
+              <input type="date" id="analysisDate">
+            </div>
+
+            <div class="form-group">
+              <label for="analyst">分析担当者</label>
+              <input type="text" id="analyst">
+            </div>
+
+            <div class="form-group">
+              <label for="reviewer">確認分析者</label>
+              <input type="text" id="reviewer">
+            </div>
+
+            <div class="form-group form-group-full">
+              <label for="title">件名</label>
+              <input type="text" id="title">
+            </div>
+
+          </div>
+
+        </section>
+
+        <section class="form-card">
+
+          <div class="section-title">
+            <h3>試料情報</h3>
+            <p>登録済み試料の編集・追加・削除ができます。</p>
+          </div>
+
+          <div class="sample-table" id="editSampleTable">
+
+            <div class="sample-table-header">
+              <div>試料No.</div>
+              <div>採取箇所</div>
+              <div>試料名称</div>
+              <div>アスベスト含有量</div>
+              <div>アスベスト種類</div>
+            </div>
+
+            <div id="editSampleRows"></div>
+
+          </div>
+
+          <button
+            type="button"
+            id="addEditSampleButton"
+            class="add-sample-button"
+          >
+            ＋ 試料を追加
+          </button>
+
+        </section>
+
+        <div class="form-actions">
+          <button
+            type="submit"
+            class="submit-button"
+          >
+            更新する
+          </button>
+        </div>
+
+      </form>
+
+    </main>
+
+  </div>
+
+  <script src="js/project-edit.js"></script>
+
+</body>
+</html>
