@@ -102,9 +102,14 @@ app.get("/api/projects", (req, res) => {
   try {
 
     const statement = db.prepare(`
-      SELECT *
+      SELECT
+        projects.*,
+        COUNT(samples.id) AS sample_count
       FROM projects
-      ORDER BY id DESC
+      LEFT JOIN samples
+        ON projects.id = samples.project_id
+      GROUP BY projects.id
+      ORDER BY projects.id DESC
     `);
 
     const projects = statement.all();
