@@ -367,8 +367,8 @@ app.get("/api/dashboard", (req, res) => {
     `).get();
 
     const totalSamples = db.prepare(`
-      SELECT COALESCE(SUM(sample_count), 0) AS count
-      FROM projects
+      SELECT COUNT(*) AS count
+      FROM samples
     `).get();
 
     const monthlyProjects = db.prepare(`
