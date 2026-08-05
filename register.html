@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Asbestos Analysis Manager</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+  <div class="app-container">
+
+    <aside class="sidebar">
+      <div class="sidebar-logo">
+        <h1>Asbestos</h1>
+        <p>Analysis Manager</p>
+      </div>
+
+      <nav class="sidebar-nav">
+        <a href="index.html" class="nav-item">Dashboard</a>
+        <a href="projects.html" class="nav-item">案件一覧</a>
+        <a href="register.html" class="nav-item active">新規案件登録</a>
+      </nav>
+    </aside>
+
+    <main class="main-content">
+
+      <div class="page-header">
+        <div>
+          <p class="page-subtitle">PROJECT MANAGEMENT</p>
+          <h2>新規案件登録</h2>
+        </div>
+      </div>
+
+      <form class="project-form" id="projectForm">
+
+        <section class="form-card">
+          <div class="section-title">
+            <h3>案件情報</h3>
+            <p>分析案件の基本情報を入力してください。</p>
+          </div>
+
+          <div class="form-grid">
+
+            <div class="form-group">
+              <label for="customerName">顧客名</label>
+              <input
+                type="text"
+                id="customerName"
+                placeholder="例：株式会社サンプル"
+              >
+            </div>
+
+            <div class="form-group">
+              <label for="reportNumber">報告書番号</label>
+              <input
+                type="text"
+                id="reportNumber"
+                placeholder="例：AAM-2026-001"
+              >
+            </div>
+
+            <div class="form-group">
+              <label for="receivedDate">サンプル受付日</label>
+              <input
+                type="date"
+                id="receivedDate"
+              >
+            </div>
+
+            <div class="form-group">
+              <label for="analysisDate">サンプル分析日</label>
+              <input
+                type="date"
+                id="analysisDate"
+              >
+            </div>
+
+            <div class="form-group">
+              <label for="analyst">分析担当者</label>
+              <input
+                type="text"
+                id="analyst"
+                placeholder="例：Analyst A"
+              >
+            </div>
+
+            <div class="form-group">
+              <label for="reviewer">確認分析者</label>
+              <input
+                type="text"
+                id="reviewer"
+                placeholder="例：Analyst B"
+              >
+            </div>
+
+            <div class="form-group form-group-full">
+              <label for="title">件名</label>
+              <input
+                type="text"
+                id="title"
+                placeholder="例：○○ビル改修工事"
+              >
+            </div>
+
+          </div>
+        </section>
+
+        <section class="form-card">
+          <div class="section-title">
+            <h3>試料情報</h3>
+            <p>分析対象となる試料情報を登録します。</p>
+          </div>
+
+          <div class="sample-table">
+
+            <div class="sample-table-header">
+                <div>試料No.</div>
+                <div>採取箇所</div>
+                <div>試料名称</div>
+                <div>アスベスト含有量</div>
+                <div>アスベスト種類</div>
+                </div>
+
+                <div class="sample-row">
+                <div>
+                    <input
+                    type="text"
+                    id="sampleNo"
+                    class="sample-no"
+                    value="1"
+                    >
+                </div>
+
+                <div>
+                    <input
+                    type="text"
+                    id="samplingLocation"
+                    class="sampling-location"
+                    placeholder="例：3階 廊下"
+                    >
+                </div>
+
+                <div>
+                    <input
+                    type="text"
+                    id="sampleName"
+                    class="sample-name"
+                    placeholder="例：天井材"
+                    >
+                </div>
+
+                <div>
+                    <input
+                    type="text"
+                    id="asbestosContent"
+                    class="asbestos-content"
+                    placeholder="例：5%"
+                    >
+                </div>
+
+                <div class="sample-type-wrapper">
+                    <input
+                        type="text"
+                        id="asbestosType"
+                        class="asbestos-type"
+                        placeholder="例：クリソタイル"
+                    >
+
+                    <button
+                        type="button"
+                        class="delete-sample-button"
+                    >
+                        ×
+                    </button>
+                </div>
+            </div>
+
+          </div>
+
+          <button
+            type="button"
+            class="add-sample-button"
+          >
+            ＋ 試料を追加
+          </button>
+
+        </section>
+
+        <div class="form-actions">
+          <button
+            type="submit"
+            class="submit-button"
+          >
+            案件を登録
+          </button>
+        </div>
+
+      </form>
+
+    </main>
+
+  </div>
+
+  <script src="js/app.js"></script>
+
+</body>
+</html>

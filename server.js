@@ -357,6 +357,45 @@ app.delete("/api/projects/:id", (req, res) => {
 
 });
 
+app.get("/api/dashboard", (req, res) => {
+
+  try {
+
+    const totalProjects = db.prepare(`
+      SELECT COUNT(*) AS count
+      FROM projects
+    `).get();
+
+    const totalSamples = db.prepare(`
+      SELECT COALESCE(SUM(sample_count), 0) AS count
+      FROM projects
+    `).get();
+
+    const monthlyProjects = db.prepare(`
+      SELECT COUNT(*) AS count
+      FROM projects
+      WHERE strftime('%Y-%m', created_at) = strftime('%Y-%m', 'now')
+    `).get();
+
+    res.json({
+      totalProjects: totalProjects.count,
+      totalSamples: totalSamples.count,
+      monthlyProjects: monthlyProjects.count
+    });
+
+  } catch (error) {
+
+    console.error(error);
+
+    res.status(500).json({
+      success: false,
+      message: error.message
+    });
+
+  }
+
+});
+
 
 app.listen(PORT, () => {
   console.log("Asbestos Analysis Manager Server Start!");
