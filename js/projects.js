@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", () => {
           <td>${project.received_date}</td>
           <td>${project.analysis_date}</td>
           <td>${project.analyst}</td>
-          <td>-</td>
+          <td>${project.sample_count}</td>
         `;
 
         row.classList.add("clickable-row");
